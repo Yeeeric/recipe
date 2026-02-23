@@ -10,55 +10,71 @@
     <div class="app">
       <header class="app-header">
         <h1>Mood Bites</h1>
-        <p>Select how you feel and get a tailored recipe.</p>
+        <p>Pick your ingredients and time to find what fits tonight.</p>
       </header>
 
       <main class="app-main">
-        <section class="mood-selector">
-          <h2>How are you feeling?</h2>
-          <div class="mood-chips" id="moodChips">
-            <!-- Chips populated by JS -->
-          </div>
-        </section>
+        <div class="left-panel">
+          <section class="time-filter">
+            <h2>Max time</h2>
+            <div class="time-filter-row">
+              <input
+                type="range"
+                id="timeRange"
+                min="10"
+                max="60"
+                step="5"
+                value="40"
+              />
+              <span class="time-label" id="timeLabel">Up to 40 min</span>
+            </div>
+          </section>
 
-        <section class="recipe-card" id="recipeCard">
-          <div class="recipe-empty" id="recipeEmpty">
-            <p>Select a mood to see a recipe.</p>
-          </div>
+          <section class="pantry-selector">
+            <h2>Core Ingredients</h2>
+            <p class="pantry-hint">
+              Click once to include (green), click twice to exclude (red).
+            </p>
+            <div class="pantry-list" id="pantryList"></div>
+          </section>
+        </div>
 
-          <div class="recipe-content hidden" id="recipeContent">
-            <div class="recipe-header">
-              <div>
+        <section class="recipes-panel">
+          <div class="recipes-list-header">
+            <h2>Matching recipes</h2>
+            <p class="recipes-count" id="recipesCount"></p>
+          </div>
+          <ul class="recipes-list" id="recipesList"></ul>
+
+          <section class="recipe-card" id="recipeCard">
+            <div class="recipe-empty" id="recipeEmpty">
+              <p>Select a recipe on the left to see details.</p>
+            </div>
+
+            <div class="recipe-content hidden" id="recipeContent">
+              <div class="recipe-header">
                 <h2 id="recipeTitle"></h2>
-                <p class="recipe-mood-label" id="recipeMoodLabel"></p>
               </div>
-              <span class="recipe-tag" id="recipeTag"></span>
-            </div>
 
-            <p class="recipe-description" id="recipeDescription"></p>
+              <p class="recipe-description" id="recipeDescription"></p>
 
-            <div class="recipe-meta">
-              <span id="recipeTime"></span>
-              <span id="recipeDifficulty"></span>
-            </div>
-
-            <div class="recipe-columns">
-              <div>
-                <h3>Ingredients</h3>
-                <ul id="recipeIngredients"></ul>
+              <div class="recipe-meta">
+                <span id="recipeTime"></span>
+                <span id="recipeDifficulty"></span>
               </div>
-              <div>
-                <h3>Steps</h3>
-                <ol id="recipeSteps"></ol>
+
+              <div class="recipe-columns">
+                <div>
+                  <h3>Ingredients</h3>
+                  <ul id="recipeIngredients"></ul>
+                </div>
+                <div>
+                  <h3>Steps</h3>
+                  <ol id="recipeSteps"></ol>
+                </div>
               </div>
             </div>
-
-            <div class="recipe-actions">
-              <button id="newRecipeBtn" class="btn-secondary">
-                Show me another
-              </button>
-            </div>
-          </div>
+          </section>
         </section>
       </main>
 
