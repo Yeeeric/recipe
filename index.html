@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Bites – Recipe by Mood</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Mood Bites</h1>
+        <p>Select how you feel and get a tailored recipe.</p>
+      </header>
+
+      <main class="app-main">
+        <section class="mood-selector">
+          <h2>How are you feeling?</h2>
+          <div class="mood-chips" id="moodChips">
+            <!-- Chips populated by JS -->
+          </div>
+        </section>
+
+        <section class="recipe-card" id="recipeCard">
+          <div class="recipe-empty" id="recipeEmpty">
+            <p>Select a mood to see a recipe.</p>
+          </div>
+
+          <div class="recipe-content hidden" id="recipeContent">
+            <div class="recipe-header">
+              <div>
+                <h2 id="recipeTitle"></h2>
+                <p class="recipe-mood-label" id="recipeMoodLabel"></p>
+              </div>
+              <span class="recipe-tag" id="recipeTag"></span>
+            </div>
+
+            <p class="recipe-description" id="recipeDescription"></p>
+
+            <div class="recipe-meta">
+              <span id="recipeTime"></span>
+              <span id="recipeDifficulty"></span>
+            </div>
+
+            <div class="recipe-columns">
+              <div>
+                <h3>Ingredients</h3>
+                <ul id="recipeIngredients"></ul>
+              </div>
+              <div>
+                <h3>Steps</h3>
+                <ol id="recipeSteps"></ol>
+              </div>
+            </div>
+
+            <div class="recipe-actions">
+              <button id="newRecipeBtn" class="btn-secondary">
+                Show me another
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <small>Made with ❤️ for food and feelings.</small>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
